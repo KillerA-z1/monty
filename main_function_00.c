@@ -17,3 +17,14 @@ void add_func(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n += (*stack)->n;
 	pop_func(stack, line_number);
 }
+
+/**
+ * nop_func - does nothing
+ * @stack: pointer to the stack (unused)
+ * @line_number: line number (unused)
+ */
+void nop_func(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
