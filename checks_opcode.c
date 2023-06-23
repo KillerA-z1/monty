@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * get_op_func -  checks opcode and returns the correct function
+ * checks_opcode -  checks opcode and returns the correct function
  * @str: the opcode
  * Return: returns a functions, or NULL on failure
  */
-instruct_func get_op_func(char *str)
+instruct_func checks_opcode(char *str)
 {
 	int i;
 
@@ -14,6 +14,7 @@ instruct_func get_op_func(char *str)
 		{"pall", pall_func},
 		{"pint", pint_func},
 		{"pop", pop_func},
+		{"swap", swap_func},
 		{NULL, NULL},
 	};
 

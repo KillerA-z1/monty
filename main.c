@@ -30,7 +30,7 @@ void read_file(char *filename, stack_t **stack)
 			continue;
 		}
 
-		opcode_func = get_op_func(opcode);
+		opcode_func = checks_opcode(opcode);
 		if (opcode_func == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_count, opcode);

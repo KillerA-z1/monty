@@ -52,21 +52,24 @@ typedef struct global_variable
 	char *buffer;
 } global_var;
 
-extern global_var var_global;
+
 
 /*main Fuxntions*/
 void pall_func(stack_t **stack, unsigned int line_number);
 void push_func(stack_t **stack, unsigned int line_number);
 void pint_func(stack_t **stack, unsigned int line_number);
 void pop_func(stack_t **stack, unsigned int line_number);
+void swap_func(stack_t **stack, unsigned int line_number);
 
 /*skeleton Fuxntions*/
 void read_file(char *filename, stack_t **stack);
 char *parse_line(char *line, stack_t **stack, unsigned int line_number);
 typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
-instruct_func get_op_func(char *str);
+instruct_func checks_opcode(char *str);
 
 /*Helper Functions*/
 void free_dlistint(stack_t *head);
 int _isalpha(int c);
+
+extern global_var var_global;
 #endif
