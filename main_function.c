@@ -19,6 +19,7 @@ void pint_func(stack_t **stack, unsigned int line_number)
 	printf("%d\n", runner->n);
 }
 
+
 /**
  * _pall - print all function
  * @stack: pointer to linked list stack

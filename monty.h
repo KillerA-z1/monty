@@ -9,9 +9,6 @@
 #include <unistd.h>
 #include <ctype.h>
 
-/*--- Struct Definitions ---*/
-extern int push_arg;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,6 +36,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 /**
  * struct global_variable - opcoode and its function
  * @file: the opcode
@@ -55,15 +53,18 @@ typedef struct global_variable
 } global_var;
 
 extern global_var var_global;
-instruct_func get_op_func(char *str);
+
+/*main Fuxntions*/
+void pall_func(stack_t **stack, unsigned int line_number);
+void push_func(stack_t **stack, unsigned int line_number);
+
+/*skeleton Fuxntions*/
 void read_file(char *filename, stack_t **stack);
-int _isalpha(int c);
-int isnumber(char *str);
 char *parse_line(char *line, stack_t **stack, unsigned int line_number);
 typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
 instruct_func get_op_func(char *str);
 
-void pall_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number);
-void push_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number);
-
+/*Helper Functions*/
+void free_dlistint(stack_t *head);
+int _isalpha(int c);
 #endif

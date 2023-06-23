@@ -26,6 +26,7 @@ int _isalpha(int c)
 	else
 		return (0);
 }
+
 /**
  * isnumber - checks if a string is a number
  * @str: string being passed
