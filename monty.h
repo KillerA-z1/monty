@@ -42,5 +42,7 @@ typedef struct instruction_s
 
 void read_file(char *filename, stack_t **stack);
 int _isalpha(int c);
+int isnumber(char *str);
+char *parse_line(char *line, stack_t **stack, unsigned int line_number);
 
 #endif
