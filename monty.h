@@ -40,6 +40,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+instruct_func get_op_func(char *str);
 void read_file(char *filename, stack_t **stack);
 int _isalpha(int c);
 int isnumber(char *str);
