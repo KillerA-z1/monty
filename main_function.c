@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _pint - print int a top of stack
+ * pint_func - print int a top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  *
@@ -21,7 +21,7 @@ void pint_func(stack_t **stack, unsigned int line_number)
 
 
 /**
- * _pall - print all function
+ *pall_func- print all function
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
@@ -60,4 +60,25 @@ void push_func(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = top;
 	*stack = top;
+}
+
+/**
+ * pop_func - remove element a list
+ *@stack: pointer to first node
+ *@line_number: integer
+ *Return: void
+ */
+void pop_func(stack_t **stack, unsigned int line_number)
+{
+	stack_t *nodo = *stack;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	*stack = nodo->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(nodo);
 }

@@ -57,6 +57,7 @@ extern global_var var_global;
 /*main Fuxntions*/
 void pall_func(stack_t **stack, unsigned int line_number);
 void push_func(stack_t **stack, unsigned int line_number);
+void pop_func(stack_t **stack, unsigned int line_number);
 
 /*skeleton Fuxntions*/
 void read_file(char *filename, stack_t **stack);
