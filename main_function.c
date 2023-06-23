@@ -25,11 +25,11 @@ void pint_func(stack_t **stack, unsigned int line_number)
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void pall_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+void pall_func(stack_t **stack, unsigned int line_number)
 {
-	stack_t *runner;
+	stack_t *runner = *stack;
+	(void)line_number;
 
-	runner = *stack;
 	while (runner != NULL)
 	{
 		printf("%d\n", runner->n);
@@ -42,7 +42,7 @@ void pall_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number
  * @line_number: number of line opcode occurs
  */
 
-void push_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+void push_func(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
 	(void)line_number;
