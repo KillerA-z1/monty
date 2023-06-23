@@ -10,6 +10,8 @@ instruct_func get_op_func(char *str)
 	int i;
 
 	instruction_t instruct[] = {
+		{"push", push_func},
+		{"pall", pall_func},
 		{NULL, NULL},
 	};
 

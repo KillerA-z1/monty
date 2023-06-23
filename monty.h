@@ -63,4 +63,7 @@ char *parse_line(char *line, stack_t **stack, unsigned int line_number);
 typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
 instruct_func get_op_func(char *str);
 
+void pall_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number);
+void push_func(stack_t **stack, __attribute__ ((unused))unsigned int line_number);
+
 #endif
