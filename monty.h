@@ -60,6 +60,7 @@ void push_func(stack_t **stack, unsigned int line_number);
 void pint_func(stack_t **stack, unsigned int line_number);
 void pop_func(stack_t **stack, unsigned int line_number);
 void swap_func(stack_t **stack, unsigned int line_number);
+void add_func(stack_t **stack, unsigned int line_number);
 
 /*skeleton Fuxntions*/
 void read_file(char *filename, stack_t **stack);

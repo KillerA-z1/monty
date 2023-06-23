@@ -15,6 +15,7 @@ instruct_func checks_opcode(char *str)
 		{"pint", pint_func},
 		{"pop", pop_func},
 		{"swap", swap_func},
+		{"add", add_func},
 		{NULL, NULL},
 	};
 
