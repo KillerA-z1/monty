@@ -23,23 +23,27 @@ void sub_func(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * mul_func - multiplies the top of the stack by the second top of the stack
+ * div_func - divides the second top element of the stack by the top element
  * @stack: pointer to the stack
  * @line_number: line number where the opcode occurs
  */
-void mul_func(stack_t **stack, unsigned int line_number)
+void div_func(stack_t **stack, unsigned int line_number)
 {
+	int divisor;
+
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-		if ((*stack)->n == 0)
+
+	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	(*stack)->next->n *= (*stack)->n;
+	divisor = (*stack)->n;
 	pop_func(stack, line_number);
+	(*stack)->n /= divisor;
 }
