@@ -21,6 +21,7 @@ instruct_func checks_opcode(char *str)
 		{"div", div_func},
 		{"mul", mul_func},
 		{"mod", mod_func},
+		{"pchar", pchar_func},
 		{NULL, NULL},
 	};
 

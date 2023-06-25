@@ -66,6 +66,7 @@ void sub_func(stack_t **stack, unsigned int line_number);
 void div_func(stack_t **stack, unsigned int line_number);
 void mul_func(stack_t **stack, unsigned int line_number);
 void mod_func(stack_t **stack, unsigned int line_number);
+void pchar_func(stack_t **stack, unsigned int line_number);
 
 /*skeleton Fuxntions*/
 void read_file(char *filename, stack_t **stack);
