@@ -25,3 +25,24 @@ void pchar_func(stack_t **stack, unsigned int line_number)
 	putchar(ascii);
 	putchar('\n');
 }
+
+/**
+ * pstr_func - prints the string contained in the stack
+ * @stack: pointer to the stack
+ * @line_number: number of the line where the opcode occurs (unused)
+ */
+void pstr_func(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+	(void)line_number;
+
+	tmp = *stack;
+
+	while (tmp != NULL && tmp->n != 0 && isascii(tmp->n) && isprint(tmp->n))
+	{
+		putchar(tmp->n);
+		tmp = tmp->next;
+	}
+
+	putchar('\n');
+}
