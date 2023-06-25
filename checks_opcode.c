@@ -18,6 +18,7 @@ instruct_func checks_opcode(char *str)
 		{"add", add_func},
 		{"nop", nop_func},
 		{"sub", sub_func},
+		{"mul", mul_func},
 		{NULL, NULL},
 	};
 
