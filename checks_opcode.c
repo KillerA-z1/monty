@@ -23,6 +23,7 @@ instruct_func checks_opcode(char *str)
 		{"mod", mod_func},
 		{"pchar", pchar_func},
 		{"pstr", pstr_func},
+		{"rotl", rotl_func},
 		{NULL, NULL},
 	};
 

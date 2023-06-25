@@ -25,6 +25,30 @@ void pchar_func(stack_t **stack, unsigned int line_number)
 	putchar(ascii);
 	putchar('\n');
 }
+/**
+ * rotl_func- rotates the stack to the left
+ * @stack: pointer to the stack
+ * @line_number: number of the line where the opcode occurs (unused)
+ */
+void rotl_func(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first, *current;
+	(void)line_number;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return;
+
+	first = *stack;
+	*stack = first->next;
+	current = *stack;
+
+	while (current->next != NULL)
+		current = current->next;
+
+	current->next = first;
+	first->prev = current;
+	first->next = NULL;
+}
 
 /**
  * pstr_func - prints the string contained in the stack
