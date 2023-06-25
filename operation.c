@@ -48,7 +48,7 @@ void div_func(stack_t **stack, unsigned int line_number)
 	(*stack)->n /= divisor;
 }
 /**
- * _mul - multiplies the top of the stack by the second top of the stack
+ * mul_func - multiplies the top of the stack by the second top of the stack
  * @stack: pointer to the stack
  * @line_number: line number where the opcode occurs
  */
@@ -62,4 +62,31 @@ void mul_func(stack_t **stack, unsigned int line_number)
 
 	(*stack)->next->n *= (*stack)->n;
 	pop_func(stack, line_number);
+}
+
+/**
+ * mod_func - calc the remainder of dividing second top element by top element
+ * @stack: pointer to the stack
+ * @line_number: line number where the opcode occurs
+ */
+void mod_func(stack_t **stack, unsigned int line_number)
+{
+	int divisor;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	divisor = (*stack)->n;
+
+	if (divisor == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	pop_func(stack, line_number);
+	(*stack)->n %= divisor;
 }
