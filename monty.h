@@ -2,6 +2,8 @@
 #define MONTY_H
 
 #define _GNU_SOURCE
+#define STACK 0
+#define QUEUE 1
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -70,6 +72,8 @@ void pchar_func(stack_t **stack, unsigned int line_number);
 void pstr_func(stack_t **stack, unsigned int line_number);
 void rotl_func(stack_t **stack, unsigned int line_number);
 void rotr_func(stack_t **stack, unsigned int line_number);
+void queue_func(stack_t **stack, unsigned int line_number);
+void stack_func(stack_t **stack, unsigned int line_number);
 
 /*skeleton Fuxntions*/
 void read_file(char *filename, stack_t **stack);
